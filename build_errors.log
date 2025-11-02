@@ -1,0 +1,471 @@
+make -C /lib/modules/6.17.4-300.fc43.x86_64/build M=/home/nick/mt7902_driver modules
+make[1]: Entering directory '/usr/src/kernels/6.17.4-300.fc43.x86_64'
+make[2]: Entering directory '/home/nick/mt7902_driver'
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: gcc (GCC) 15.2.1 20250924 (Red Hat 15.2.1-2)
+  You are using:           gcc (GCC) 15.2.1 20251022 (Red Hat 15.2.1-3)
+  CC [M]  mmio.o
+  CC [M]  util.o
+  CC [M]  trace.o
+  CC [M]  dma.o
+  CC [M]  mac80211.o
+  CC [M]  debugfs.o
+  CC [M]  eeprom.o
+  CC [M]  tx.o
+  CC [M]  agg-rx.o
+  CC [M]  mcu.o
+  CC [M]  wed.o
+  CC [M]  scan.o
+  CC [M]  channel.o
+  CC [M]  pci.o
+  LD [M]  mt76.o
+  CC [M]  mt76_connac_mcu.o
+  CC [M]  mt76_connac_mac.o
+  CC [M]  mt76_connac3_mac.o
+  LD [M]  mt76-connac-lib.o
+  CC [M]  mt792x_core.o
+  CC [M]  mt792x_mac.o
+  CC [M]  mt792x_trace.o
+  CC [M]  mt792x_debugfs.o
+  CC [M]  mt792x_dma.o
+  CC [M]  mt792x_acpi_sar.o
+  LD [M]  mt792x-lib.o
+  CC [M]  mac.o
+In file included from mac.c:7:
+mt7902.h:208:34: warning: ‘struct mt7902_dev’ declared inside parameter list will not be visible outside of this definition or declaration
+  208 | int mt7902_mcu_sta_update(struct mt7902_dev *dev, struct ieee80211_sta *sta,
+      |                                  ^~~~~~~~~~
+mt7902.h:223:43: warning: ‘struct mt7902_dev’ declared inside parameter list will not be visible outside of this definition or declaration
+  223 | static inline u16 mt7902_wtbl_size(struct mt7902_dev *dev)
+      |                                           ^~~~~~~~~~
+In file included from mac.c:10:
+mcu.h:483:33: warning: ‘/*’ within comment [-Wcomment]
+  483 |         u8 has_20_sta;          /* Check if any sta support GF. * /
+mcu.h:486:33: warning: ‘/*’ within comment [-Wcomment]
+  486 |         u8 vht_bw_signal;       /* not use * /
+mcu.h:487:33: warning: ‘/*’ within comment [-Wcomment]
+  487 |         u8 vht_force_sgi;       /* not use * /
+mcu.h:593:9: warning: ‘MT7902_BSS_UPDATE_MAX_SIZE’ redefined
+  593 | #define MT7902_BSS_UPDATE_MAX_SIZE      (sizeof(struct sta_req_hdr) +   \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:349:9: note: this is the location of the previous definition
+  349 | #define MT7902_BSS_UPDATE_MAX_SIZE      (sizeof(struct bss_req_hdr) +   \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:366:1: warning: ‘mt7902_mcu_bss_basic_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  366 | mt7902_mcu_bss_basic_tlv(struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:372:1: warning: ‘mt7902_mcu_bss_rfch_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  372 | mt7902_mcu_bss_rfch_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:375:1: warning: ‘mt7902_mcu_bss_bmc_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  375 | mt7902_mcu_bss_bmc_tlv(struct sk_buff *skb, struct mt7902_phy *phy);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:377:1: warning: ‘mt7902_mcu_bss_sec_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  377 | mt7902_mcu_bss_sec_tlv(struct sk_buff *skb, struct ieee80211_vif *vif);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:379:1: warning: ‘mt7902_mcu_bss_ra_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  379 | mt7902_mcu_bss_ra_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:382:1: warning: ‘mt7902_mcu_bss_he_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  382 | mt7902_mcu_bss_he_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:385:1: warning: ‘mt7902_mcu_bss_txcmd_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  385 | mt7902_mcu_bss_txcmd_tlv(struct sk_buff *skb, bool en);
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:387:1: warning: ‘mt7902_mcu_bss_mld_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  387 | mt7902_mcu_bss_mld_tlv(struct sk_buff *skb);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:401:1: warning: ‘mt7902_mcu_muar_config’ declared ‘static’ but never defined [-Wunused-function]
+  401 | mt7902_mcu_muar_config(struct mt7902_phy *phy, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:404:1: warning: ‘mt7902_is_ebf_supported’ declared ‘static’ but never defined [-Wunused-function]
+  404 | mt7902_is_ebf_supported(struct mt7902_phy *phy, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:407:1: warning: ‘mt7902_mcu_sta_bfer_he’ declared ‘static’ but never defined [-Wunused-function]
+  407 | mt7902_mcu_sta_bfer_he(struct ieee80211_sta *sta, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:410:1: warning: ‘mt7902_mcu_sta_bfer_vht’ declared ‘static’ but never defined [-Wunused-function]
+  410 | mt7902_mcu_sta_bfer_vht(struct ieee80211_sta *sta, struct mt7902_phy *phy,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:413:1: warning: ‘mt7902_mcu_sta_bfer_ht’ declared ‘static’ but never defined [-Wunused-function]
+  413 | mt7902_mcu_sta_bfer_ht(struct ieee80211_sta *sta, struct mt7902_phy *phy,
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:416:1: warning: ‘mt7902_mcu_sta_bfer_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  416 | mt7902_mcu_sta_bfer_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:419:1: warning: ‘mt7902_mcu_sta_ht_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  419 | mt7902_mcu_sta_ht_tlv(struct sk_buff *skb, struct ieee80211_sta *sta);
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:421:1: warning: ‘mt7902_mcu_sta_vht_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  421 | mt7902_mcu_sta_vht_tlv(struct sk_buff *skb, struct ieee80211_sta *sta);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:423:1: warning: ‘mt7902_mcu_sta_amsdu_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  423 | mt7902_mcu_sta_amsdu_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:426:1: warning: ‘mt7902_mcu_sta_he_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  426 | mt7902_mcu_sta_he_tlv(struct sk_buff *skb, struct ieee80211_sta *sta,
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:429:1: warning: ‘mt7902_mcu_sta_he_6g_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  429 | mt7902_mcu_sta_he_6g_tlv(struct sk_buff *skb, struct ieee80211_sta *sta,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:432:1: warning: ‘mt7902_mcu_sta_muru_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  432 | mt7902_mcu_sta_muru_tlv(struct sk_buff *skb, struct ieee80211_sta *sta,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:435:1: warning: ‘mt7902_mcu_sta_bfee_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  435 | mt7902_mcu_sta_bfee_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:438:1: warning: ‘mt7902_mcu_sta_hdr_trans_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  438 | mt7902_mcu_sta_hdr_trans_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:441:1: warning: ‘mt7902_mcu_add_group’ declared ‘static’ but never defined [-Wunused-function]
+  441 | mt7902_mcu_add_group(struct mt7902_dev *dev, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~
+mac.c:34:13: warning: ‘mt7902_mac_sta_poll’ defined but not used [-Wunused-function]
+   34 | static void mt7902_mac_sta_poll(struct mt7902_dev *dev)
+      |             ^~~~~~~~~~~~~~~~~~~
+  CC [M]  main.o
+In file included from main.c:9:
+mt7902.h:208:34: warning: ‘struct mt7902_dev’ declared inside parameter list will not be visible outside of this definition or declaration
+  208 | int mt7902_mcu_sta_update(struct mt7902_dev *dev, struct ieee80211_sta *sta,
+      |                                  ^~~~~~~~~~
+mt7902.h:223:43: warning: ‘struct mt7902_dev’ declared inside parameter list will not be visible outside of this definition or declaration
+  223 | static inline u16 mt7902_wtbl_size(struct mt7902_dev *dev)
+      |                                           ^~~~~~~~~~
+In file included from main.c:10:
+mcu.h:483:33: warning: ‘/*’ within comment [-Wcomment]
+  483 |         u8 has_20_sta;          /* Check if any sta support GF. * /
+mcu.h:486:33: warning: ‘/*’ within comment [-Wcomment]
+  486 |         u8 vht_bw_signal;       /* not use * /
+mcu.h:487:33: warning: ‘/*’ within comment [-Wcomment]
+  487 |         u8 vht_force_sgi;       /* not use * /
+mcu.h:593:9: warning: ‘MT7902_BSS_UPDATE_MAX_SIZE’ redefined
+  593 | #define MT7902_BSS_UPDATE_MAX_SIZE      (sizeof(struct sta_req_hdr) +   \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:349:9: note: this is the location of the previous definition
+  349 | #define MT7902_BSS_UPDATE_MAX_SIZE      (sizeof(struct bss_req_hdr) +   \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c: In function ‘mt7902_add_interface’:
+main.c:404:69: error: passing argument 1 of ‘mt7902_wtbl_size’ from incompatible pointer type [-Wincompatible-pointer-types]
+  404 |         idx = mt76_wcid_alloc(dev->mt76.wcid_mask, mt7902_wtbl_size(dev));
+      |                                                                     ^~~
+      |                                                                     |
+      |                                                                     struct mt7902_dev *
+mt7902.h:223:55: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt7902_dev *’
+  223 | static inline u16 mt7902_wtbl_size(struct mt7902_dev *dev)
+      |                                    ~~~~~~~~~~~~~~~~~~~^~~
+main.c:435:9: error: too many arguments to function ‘mt7902_mcu_add_sta’; expected 4, have 5
+  435 |         mt7902_mcu_add_sta(dev, vif, NULL, CONN_STATE_PORT_SECURE, true);
+      |         ^~~~~~~~~~~~~~~~~~                                         ~~~~
+mcu.h:396:5: note: declared here
+  396 | int mt7902_mcu_add_sta(struct mt7902_dev *dev, struct ieee80211_vif *vif,
+      |     ^~~~~~~~~~~~~~~~~~
+In file included from /usr/src/kernels/6.17.4-300.fc43.x86_64/include/asm-generic/bug.h:22,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/arch/x86/include/asm/bug.h:103,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/arch/x86/include/asm/alternative.h:9,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/arch/x86/include/asm/barrier.h:5,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/include/asm-generic/bitops/generic-non-atomic.h:7,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/bitops.h:28,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/kernel.h:23,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/skbuff.h:13,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/if_ether.h:19,
+                 from /usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/etherdevice.h:20,
+                 from main.c:4:
+main.c: In function ‘mt7902_set_key’:
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/kern_levels.h:5:25: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘u8 *’ {aka ‘unsigned char *’} [-Wformat=]
+    5 | #define KERN_SOH        "\001"          /* ASCII Start Of Header */
+      |                         ^~~~~~
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/printk.h:486:25: note: in definition of macro ‘printk_index_wrap’
+  486 |                 _p_func(_fmt, ##__VA_ARGS__);                           \
+      |                         ^~~~
+main.c:607:9: note: in expansion of macro ‘printk’
+  607 |         printk(KERN_DEBUG "main.c - mt7902_set_key - wdid_keyidx: %x, idx: %d", wcid_keyidx, idx);
+      |         ^~~~~~
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/kern_levels.h:15:25: note: in expansion of macro ‘KERN_SOH’
+   15 | #define KERN_DEBUG      KERN_SOH "7"    /* debug-level messages */
+      |                         ^~~~~~~~
+main.c:607:16: note: in expansion of macro ‘KERN_DEBUG’
+  607 |         printk(KERN_DEBUG "main.c - mt7902_set_key - wdid_keyidx: %x, idx: %d", wcid_keyidx, idx);
+      |                ^~~~~~~~~~
+main.c:654:9: warning: ‘/*’ within comment [-Wcomment]
+  654 |         /* keep last * /
+main.c:660:1: warning: ‘/*’ within comment [-Wcomment]
+  660 | /**
+main.c:700:1: warning: ‘/*’ within comment [-Wcomment]
+  700 | /* cipher suite selectors * /
+main.c:704:1: warning: ‘/*’ within comment [-Wcomment]
+  704 | /* reserved:                            SUITE(0x000FAC, 3) * /
+main.c:719:9: warning: ‘/*’ within comment [-Wcomment]
+  719 |         /* The hardware does not support per-STA RX GTK, fallback
+main.c: In function ‘mt7902_configure_filter’:
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/kern_levels.h:5:25: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘u64’ {aka ‘long long unsigned int’} [-Wformat=]
+    5 | #define KERN_SOH        "\001"          /* ASCII Start Of Header */
+      |                         ^~~~~~
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/printk.h:486:25: note: in definition of macro ‘printk_index_wrap’
+  486 |                 _p_func(_fmt, ##__VA_ARGS__);                           \
+      |                         ^~~~
+main.c:892:9: note: in expansion of macro ‘printk’
+  892 |         printk(KERN_DEBUG "main.c - mt7902_configure_filter(hw, changed_flags, total_flags, multicast: 0x%x)", multicast);
+      |         ^~~~~~
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/kern_levels.h:15:25: note: in expansion of macro ‘KERN_SOH’
+   15 | #define KERN_DEBUG      KERN_SOH "7"    /* debug-level messages */
+      |                         ^~~~~~~~
+main.c:892:16: note: in expansion of macro ‘KERN_DEBUG’
+  892 |         printk(KERN_DEBUG "main.c - mt7902_configure_filter(hw, changed_flags, total_flags, multicast: 0x%x)", multicast);
+      |                ^~~~~~~~~~
+main.c: In function ‘mt7902_bss_info_changed’:
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/kern_levels.h:5:25: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘u64’ {aka ‘long long unsigned int’} [-Wformat=]
+    5 | #define KERN_SOH        "\001"          /* ASCII Start Of Header */
+      |                         ^~~~~~
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/printk.h:486:25: note: in definition of macro ‘printk_index_wrap’
+  486 |                 _p_func(_fmt, ##__VA_ARGS__);                           \
+      |                         ^~~~
+main.c:945:9: note: in expansion of macro ‘printk’
+  945 |         printk(KERN_DEBUG "main.c - mt7902_bss_info_changed(hw, vif, info, changed: 0x%x)", changed);
+      |         ^~~~~~
+/usr/src/kernels/6.17.4-300.fc43.x86_64/include/linux/kern_levels.h:15:25: note: in expansion of macro ‘KERN_SOH’
+   15 | #define KERN_DEBUG      KERN_SOH "7"    /* debug-level messages */
+      |                         ^~~~~~~~
+main.c:945:16: note: in expansion of macro ‘KERN_DEBUG’
+  945 |         printk(KERN_DEBUG "main.c - mt7902_bss_info_changed(hw, vif, info, changed: 0x%x)", changed);
+      |                ^~~~~~~~~~
+main.c:967:41: error: passing argument 1 of ‘mt7902_mcu_add_bss_info’ from incompatible pointer type [-Wincompatible-pointer-types]
+  967 |                 mt7902_mcu_add_bss_info(phy, vif, true);
+      |                                         ^~~
+      |                                         |
+      |                                         struct mt792x_phy *
+mt7902.h:573:48: note: expected ‘struct mt7902_phy *’ but argument is of type ‘struct mt792x_phy *’
+  573 | int mt7902_mcu_add_bss_info(struct mt7902_phy *phy,
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c:969:36: error: passing argument 1 of ‘mt7902_mcu_add_sta’ from incompatible pointer type [-Wincompatible-pointer-types]
+  969 |                 mt7902_mcu_add_sta(dev, vif, NULL, CONN_STATE_PORT_SECURE, false);
+      |                                    ^~~
+      |                                    |
+      |                                    struct mt792x_dev *
+mcu.h:396:43: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  396 | int mt7902_mcu_add_sta(struct mt7902_dev *dev, struct ieee80211_vif *vif,
+      |                        ~~~~~~~~~~~~~~~~~~~^~~
+main.c:969:17: error: too many arguments to function ‘mt7902_mcu_add_sta’; expected 4, have 5
+  969 |                 mt7902_mcu_add_sta(dev, vif, NULL, CONN_STATE_PORT_SECURE, false);
+      |                 ^~~~~~~~~~~~~~~~~~                                         ~~~~~
+mcu.h:396:5: note: declared here
+  396 | int mt7902_mcu_add_sta(struct mt7902_dev *dev, struct ieee80211_vif *vif,
+      |     ^~~~~~~~~~~~~~~~~~
+main.c:999:17: error: too many arguments to function ‘mt7902_mcu_add_beacon’; expected 3, have 4
+  999 |                 mt7902_mcu_add_beacon(hw, vif, info->enable_beacon, changed);
+      |                 ^~~~~~~~~~~~~~~~~~~~~                               ~~~~~~~
+mcu.h:398:5: note: declared here
+  398 | int mt7902_mcu_add_beacon(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+      |     ^~~~~~~~~~~~~~~~~~~~~
+main.c:1006:41: error: passing argument 1 of ‘mt7902_mcu_add_bss_info’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1006 |                 mt7902_mcu_add_bss_info(phy, vif, false);
+      |                                         ^~~
+      |                                         |
+      |                                         struct mt792x_phy *
+mt7902.h:573:48: note: expected ‘struct mt7902_phy *’ but argument is of type ‘struct mt792x_phy *’
+  573 | int mt7902_mcu_add_bss_info(struct mt7902_phy *phy,
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1008:36: error: passing argument 1 of ‘mt7902_mcu_add_sta’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1008 |                 mt7902_mcu_add_sta(dev, vif, NULL, CONN_STATE_DISCONNECT, false);
+      |                                    ^~~
+      |                                    |
+      |                                    struct mt792x_dev *
+mcu.h:396:43: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  396 | int mt7902_mcu_add_sta(struct mt7902_dev *dev, struct ieee80211_vif *vif,
+      |                        ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1008:17: error: too many arguments to function ‘mt7902_mcu_add_sta’; expected 4, have 5
+ 1008 |                 mt7902_mcu_add_sta(dev, vif, NULL, CONN_STATE_DISCONNECT, false);
+      |                 ^~~~~~~~~~~~~~~~~~                                        ~~~~~
+mcu.h:396:5: note: declared here
+  396 | int mt7902_mcu_add_sta(struct mt7902_dev *dev, struct ieee80211_vif *vif,
+      |     ^~~~~~~~~~~~~~~~~~
+main.c: In function ‘mt7902_mac_sta_add’:
+main.c:1109:32: error: passing argument 1 of ‘mt7902_mac_wtbl_update’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1109 |         mt7902_mac_wtbl_update(dev, idx,
+      |                                ^~~
+      |                                |
+      |                                struct mt792x_dev *
+mt7902.h:575:48: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  575 | bool mt7902_mac_wtbl_update(struct mt7902_dev *dev, int idx, u32 mask);
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1112:37: error: passing argument 1 of ‘mt7902_mcu_sta_update’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1112 |         ret = mt7902_mcu_sta_update(dev, sta, vif, true,
+      |                                     ^~~
+      |                                     |
+      |                                     struct mt792x_dev *
+mt7902.h:208:46: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  208 | int mt7902_mcu_sta_update(struct mt7902_dev *dev, struct ieee80211_sta *sta,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+main.c: In function ‘mt7902_mac_sta_event’:
+main.c:1141:55: error: passing argument 1 of ‘mt7902_mcu_add_bss_info’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1141 |                 u32 ret = mt7902_mcu_add_bss_info(mvif->phy, vif, true);
+      |                                                   ~~~~^~~~~
+      |                                                       |
+      |                                                       struct mt792x_phy *
+mt7902.h:573:48: note: expected ‘struct mt7902_phy *’ but argument is of type ‘struct mt792x_phy *’
+  573 | int mt7902_mcu_add_bss_info(struct mt7902_phy *phy,
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1147:32: error: passing argument 1 of ‘mt7902_mac_wtbl_update’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1147 |         mt7902_mac_wtbl_update(dev, msta->deflink.wcid.idx,
+      |                                ^~~
+      |                                |
+      |                                struct mt792x_dev *
+mt7902.h:575:48: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  575 | bool mt7902_mac_wtbl_update(struct mt7902_dev *dev, int idx, u32 mask);
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1151:31: error: passing argument 1 of ‘mt7902_mcu_sta_update’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1151 |         mt7902_mcu_sta_update(dev, sta, vif, true, MT76_STA_INFO_STATE_ASSOC);
+      |                               ^~~
+      |                               |
+      |                               struct mt792x_dev *
+mt7902.h:208:46: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  208 | int mt7902_mcu_sta_update(struct mt7902_dev *dev, struct ieee80211_sta *sta,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+main.c: In function ‘mt7902_mac_sta_remove’:
+main.c:1170:31: error: passing argument 1 of ‘mt7902_mcu_sta_update’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1170 |         mt7902_mcu_sta_update(dev, sta, vif, false, MT76_STA_INFO_STATE_NONE);
+      |                               ^~~
+      |                               |
+      |                               struct mt792x_dev *
+mt7902.h:208:46: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  208 | int mt7902_mcu_sta_update(struct mt7902_dev *dev, struct ieee80211_sta *sta,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1171:32: error: passing argument 1 of ‘mt7902_mac_wtbl_update’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1171 |         mt7902_mac_wtbl_update(dev, msta->deflink.wcid.idx,
+      |                                ^~~
+      |                                |
+      |                                struct mt792x_dev *
+mt7902.h:575:48: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  575 | bool mt7902_mac_wtbl_update(struct mt7902_dev *dev, int idx, u32 mask);
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1183:63: error: passing argument 1 of ‘mt7902_mcu_add_bss_info’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1183 |                         u32 ret = mt7902_mcu_add_bss_info(mvif->phy, vif, true);
+      |                                                           ~~~~^~~~~
+      |                                                               |
+      |                                                               struct mt792x_phy *
+mt7902.h:573:48: note: expected ‘struct mt7902_phy *’ but argument is of type ‘struct mt792x_phy *’
+  573 | int mt7902_mcu_add_bss_info(struct mt7902_phy *phy,
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c: In function ‘mt7902_start_ap’:
+main.c:1625:43: error: passing argument 1 of ‘mt7902_mcu_add_bss_info’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1625 |         err = mt7902_mcu_add_bss_info(mvif->phy, vif, true);
+      |                                       ~~~~^~~~~
+      |                                           |
+      |                                           struct mt792x_phy *
+mt7902.h:573:48: note: expected ‘struct mt7902_phy *’ but argument is of type ‘struct mt792x_phy *’
+  573 | int mt7902_mcu_add_bss_info(struct mt7902_phy *phy,
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c:1635:37: error: passing argument 1 of ‘mt7902_mcu_sta_update’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1635 |         err = mt7902_mcu_sta_update(dev, NULL, vif, true,
+      |                                     ^~~
+      |                                     |
+      |                                     struct mt792x_dev *
+mt7902.h:208:46: note: expected ‘struct mt7902_dev *’ but argument is of type ‘struct mt792x_dev *’
+  208 | int mt7902_mcu_sta_update(struct mt7902_dev *dev, struct ieee80211_sta *sta,
+      |                           ~~~~~~~~~~~~~~~~~~~^~~
+main.c: In function ‘mt7902_stop_ap’:
+main.c:1661:43: error: passing argument 1 of ‘mt7902_mcu_add_bss_info’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1661 |         err = mt7902_mcu_add_bss_info(mvif->phy, vif, false);
+      |                                       ~~~~^~~~~
+      |                                           |
+      |                                           struct mt792x_phy *
+mt7902.h:573:48: note: expected ‘struct mt7902_phy *’ but argument is of type ‘struct mt792x_phy *’
+  573 | int mt7902_mcu_add_bss_info(struct mt7902_phy *phy,
+      |                             ~~~~~~~~~~~~~~~~~~~^~~
+main.c: At top level:
+main.c:1849:19: error: initialization of ‘int (*)(struct ieee80211_hw *, int,  u32)’ {aka ‘int (*)(struct ieee80211_hw *, int,  unsigned int)’} from incompatible pointer type ‘int (*)(struct ieee80211_hw *, u32)’ {aka ‘int (*)(struct ieee80211_hw *, unsigned int)’} [-Wincompatible-pointer-types]
+ 1849 |         .config = mt7902_config,
+      |                   ^~~~~~~~~~~~~
+main.c:1849:19: note: (near initialization for ‘mt7902_ops.config’)
+main.c:854:12: note: ‘mt7902_config’ declared here
+  854 | static int mt7902_config(struct ieee80211_hw *hw, u32 changed)
+      |            ^~~~~~~~~~~~~
+main.c:1863:30: error: initialization of ‘int (*)(struct ieee80211_hw *, int,  u32)’ {aka ‘int (*)(struct ieee80211_hw *, int,  unsigned int)’} from incompatible pointer type ‘int (*)(struct ieee80211_hw *, u32)’ {aka ‘int (*)(struct ieee80211_hw *, unsigned int)’} [-Wincompatible-pointer-types]
+ 1863 |         .set_rts_threshold = mt7902_set_rts_threshold,
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~
+main.c:1863:30: note: (near initialization for ‘mt7902_ops.set_rts_threshold’)
+main.c:1199:12: note: ‘mt7902_set_rts_threshold’ declared here
+ 1199 | static int mt7902_set_rts_threshold(struct ieee80211_hw *hw, u32 val)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~
+main.c:1876:24: error: initialization of ‘int (*)(struct ieee80211_hw *, int,  u32,  u32)’ {aka ‘int (*)(struct ieee80211_hw *, int,  unsigned int,  unsigned int)’} from incompatible pointer type ‘int (*)(struct ieee80211_hw *, u32,  u32)’ {aka ‘int (*)(struct ieee80211_hw *, unsigned int,  unsigned int)’} [-Wincompatible-pointer-types]
+ 1876 |         .set_antenna = mt7902_set_antenna,
+      |                        ^~~~~~~~~~~~~~~~~~
+main.c:1876:24: note: (near initialization for ‘mt7902_ops.set_antenna’)
+main.c:1388:1: note: ‘mt7902_set_antenna’ declared here
+ 1388 | mt7902_set_antenna(struct ieee80211_hw *hw, u32 tx_ant, u32 rx_ant)
+      | ^~~~~~~~~~~~~~~~~~
+mcu.h:366:1: warning: ‘mt7902_mcu_bss_basic_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  366 | mt7902_mcu_bss_basic_tlv(struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:372:1: warning: ‘mt7902_mcu_bss_rfch_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  372 | mt7902_mcu_bss_rfch_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:375:1: warning: ‘mt7902_mcu_bss_bmc_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  375 | mt7902_mcu_bss_bmc_tlv(struct sk_buff *skb, struct mt7902_phy *phy);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:377:1: warning: ‘mt7902_mcu_bss_sec_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  377 | mt7902_mcu_bss_sec_tlv(struct sk_buff *skb, struct ieee80211_vif *vif);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:379:1: warning: ‘mt7902_mcu_bss_ra_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  379 | mt7902_mcu_bss_ra_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:382:1: warning: ‘mt7902_mcu_bss_he_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  382 | mt7902_mcu_bss_he_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:385:1: warning: ‘mt7902_mcu_bss_txcmd_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  385 | mt7902_mcu_bss_txcmd_tlv(struct sk_buff *skb, bool en);
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:387:1: warning: ‘mt7902_mcu_bss_mld_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  387 | mt7902_mcu_bss_mld_tlv(struct sk_buff *skb);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:401:1: warning: ‘mt7902_mcu_muar_config’ declared ‘static’ but never defined [-Wunused-function]
+  401 | mt7902_mcu_muar_config(struct mt7902_phy *phy, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:404:1: warning: ‘mt7902_is_ebf_supported’ declared ‘static’ but never defined [-Wunused-function]
+  404 | mt7902_is_ebf_supported(struct mt7902_phy *phy, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:407:1: warning: ‘mt7902_mcu_sta_bfer_he’ declared ‘static’ but never defined [-Wunused-function]
+  407 | mt7902_mcu_sta_bfer_he(struct ieee80211_sta *sta, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:410:1: warning: ‘mt7902_mcu_sta_bfer_vht’ declared ‘static’ but never defined [-Wunused-function]
+  410 | mt7902_mcu_sta_bfer_vht(struct ieee80211_sta *sta, struct mt7902_phy *phy,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:413:1: warning: ‘mt7902_mcu_sta_bfer_ht’ declared ‘static’ but never defined [-Wunused-function]
+  413 | mt7902_mcu_sta_bfer_ht(struct ieee80211_sta *sta, struct mt7902_phy *phy,
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:416:1: warning: ‘mt7902_mcu_sta_bfer_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  416 | mt7902_mcu_sta_bfer_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:419:1: warning: ‘mt7902_mcu_sta_ht_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  419 | mt7902_mcu_sta_ht_tlv(struct sk_buff *skb, struct ieee80211_sta *sta);
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:421:1: warning: ‘mt7902_mcu_sta_vht_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  421 | mt7902_mcu_sta_vht_tlv(struct sk_buff *skb, struct ieee80211_sta *sta);
+      | ^~~~~~~~~~~~~~~~~~~~~~
+mcu.h:423:1: warning: ‘mt7902_mcu_sta_amsdu_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  423 | mt7902_mcu_sta_amsdu_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:426:1: warning: ‘mt7902_mcu_sta_he_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  426 | mt7902_mcu_sta_he_tlv(struct sk_buff *skb, struct ieee80211_sta *sta,
+      | ^~~~~~~~~~~~~~~~~~~~~
+mcu.h:429:1: warning: ‘mt7902_mcu_sta_he_6g_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  429 | mt7902_mcu_sta_he_6g_tlv(struct sk_buff *skb, struct ieee80211_sta *sta,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:432:1: warning: ‘mt7902_mcu_sta_muru_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  432 | mt7902_mcu_sta_muru_tlv(struct sk_buff *skb, struct ieee80211_sta *sta,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:435:1: warning: ‘mt7902_mcu_sta_bfee_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  435 | mt7902_mcu_sta_bfee_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:438:1: warning: ‘mt7902_mcu_sta_hdr_trans_tlv’ declared ‘static’ but never defined [-Wunused-function]
+  438 | mt7902_mcu_sta_hdr_trans_tlv(struct mt7902_dev *dev, struct sk_buff *skb,
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mcu.h:441:1: warning: ‘mt7902_mcu_add_group’ declared ‘static’ but never defined [-Wunused-function]
+  441 | mt7902_mcu_add_group(struct mt7902_dev *dev, struct ieee80211_vif *vif,
+      | ^~~~~~~~~~~~~~~~~~~~
+make[4]: *** [/usr/src/kernels/6.17.4-300.fc43.x86_64/scripts/Makefile.build:287: main.o] Error 1
+make[3]: *** [/usr/src/kernels/6.17.4-300.fc43.x86_64/Makefile:2047: .] Error 2
+make[2]: *** [/usr/src/kernels/6.17.4-300.fc43.x86_64/Makefile:248: __sub-make] Error 2
+make[2]: Leaving directory '/home/nick/mt7902_driver'
+make[1]: *** [Makefile:248: __sub-make] Error 2
+make[1]: Leaving directory '/usr/src/kernels/6.17.4-300.fc43.x86_64'
+make: *** [Makefile:26: all] Error 2
