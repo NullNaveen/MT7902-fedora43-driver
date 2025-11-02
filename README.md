@@ -42,21 +42,37 @@ mt7902_dev/phy/vif structs → defined later in mt7902.h
 2. Convert inline functions to non-inline (move to .c files)
 3. Compatibility layer avoiding struct member access in headers
 
-### 🚧 Method 3: Build Kernel 6.16 (NEXT)
+### � Method 3: Build Kernel 6.16 (IN PROGRESS)
 Download and build linux-6.16 kernel where MT7902 driver works natively:
-- Higher success probability
-- 4-6 hour estimated build time
+- ✅ Kernel source downloaded (146MB)
+- ✅ Extracted and verified
+- ✅ MT7902 PCI ID (0x7902) **already present** in mt7925 driver!
+- ✅ Fedora 6.17.4 config copied as base
+- ✅ MT7925E driver enabled as module (CONFIG_MT7925E=m)
+- ⏳ **Currently building** with -j8 (8 parallel jobs)
+- ⏳ Estimated completion: 1-3 hours
+- Higher success probability - MT7902 is natively supported in kernel 6.16
 - Risk: May introduce regressions on newer Fedora 43
 
 ## 📁 Repository Structure
 ```
-mt7902_driver/          # Deep porting work (Method 2)
+mt7902_driver/          # Deep porting work (Method 2) - main branch
 ├── *.c, *.h           # MT7902 driver sources from 6.16
 ├── Makefile           # Build configuration
 └── README.md          # This file
 
-kernel-build/           # Kernel 6.16 build (Method 3) - separate branch
+~/kernel-6.16-build/    # Kernel 6.16 build (Method 3) - kernel-6.16-build branch
+├── linux-6.16/        # Extracted kernel source
+│   ├── .config        # Based on Fedora 6.17.4 config
+│   ├── build.log      # Live build output
+│   └── drivers/net/wireless/mediatek/mt76/mt7925/
+│       └── pci.c      # Contains MT7902 PCI ID (0x7902)
+└── linux-6.16.tar.xz  # Original kernel tarball (146MB)
 ```
+
+**Branch Strategy:**
+- `main` - Deep porting work preservation (Method 2)
+- `kernel-6.16-build` - Kernel build work (Method 3)
 
 ## 🔍 Key Files Modified
 - `mt7902.h` - Custom MT7902 struct definitions + compatibility fields
@@ -66,9 +82,16 @@ kernel-build/           # Kernel 6.16 build (Method 3) - separate branch
 - `Makefile` - Compiler flags for compatibility
 
 ## 🐛 Current Status
-**Compilation:** ❌ Failing with struct definition ordering issues  
-**Runtime:** ⏸️ Not yet tested  
-**Bluetooth:** ❌ Not working (same firmware issue)
+**Method 2 (Deep Porting):** ❌ Blocked by C header ordering issues (167 errors)  
+**Method 3 (Kernel 6.16 Build):** ⏳ **ACTIVELY BUILDING** - kernel compilation in progress  
+**Bluetooth:** ❌ Not working (tied to WiFi firmware issue)
+
+## ⚡ Latest Update (Nov 2, 2025)
+**Discovery:** MT7902 (PCI ID 0x7902) is already supported in kernel 6.16's mt7925 driver!
+- No driver porting needed
+- Building complete kernel 6.16 with native MT7902 support
+- Build started: ~67k tokens used (6.7% of budget)
+- Build progress: Compiling modules (drivers, filesystems, network stack)
 
 ## 📊 Error Progression
 - Initial: ~200+ compilation errors
@@ -107,8 +130,22 @@ Based on Linux kernel drivers - GPLv2
 
 ## 🏁 Timeline
 - **Started:** November 2, 2025
+- **Method 1 (MCU Workarounds):** Failed after 6+ bypass attempts
+- **Method 2 (Deep Porting):** Blocked at header ordering (200+ → 167 errors)
+- **Method 3 (Kernel Build):** In progress - ~1-3 hours to completion
 - **Expected:** Working driver within 12-24 hours of focused work
-- **Status:** Active development
+- **Status:** Active development - build running, monitoring progress
+
+## 💬 FAQ
+
+### Can I increase the token limit?
+Token limits are set by the AI service (GitHub Copilot). Users typically cannot increase them - it's part of the service tier. Current limit: 1 million tokens per conversation. We're at ~68k tokens (6.8% used).
+
+### Will the repository expose personal information?
+No. The code has been checked and contains no personal paths, usernames, or identifying information. Only your GitHub username (NullNaveen) will be visible, which is already public.
+
+### Can I use the Hyprland shell UI?
+Yes! The [caelestia-dots/shell](https://github.com/caelestia-dots/shell) is GPL-3.0 licensed and free to use. It's a beautiful Hyprland configuration with AGS widgets that will work great on Fedora 43.
 
 ---
 *"Don't stop until it works."* 🚀
