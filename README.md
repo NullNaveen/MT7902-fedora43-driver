@@ -136,16 +136,3 @@ Based on Linux kernel drivers - GPLv2
 - **Expected:** Working driver within 12-24 hours of focused work
 - **Status:** Active development - build running, monitoring progress
 
-## 💬 FAQ
-
-### Can I increase the token limit?
-Token limits are set by the AI service (GitHub Copilot). Users typically cannot increase them - it's part of the service tier. Current limit: 1 million tokens per conversation. We're at ~68k tokens (6.8% used).
-
-### Will the repository expose personal information?
-No. The code has been checked and contains no personal paths, usernames, or identifying information. Only your GitHub username (NullNaveen) will be visible, which is already public.
-
-### Can I use the Hyprland shell UI?
-Yes! The [caelestia-dots/shell](https://github.com/caelestia-dots/shell) is GPL-3.0 licensed and free to use. It's a beautiful Hyprland configuration with AGS widgets that will work great on Fedora 43.
-
----
-*"Don't stop until it works."* 🚀
